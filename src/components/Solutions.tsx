@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GraduationCap, Building2, Hospital, ShoppingBag } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const solutions = [
   {
@@ -30,10 +31,12 @@ const solutions = [
 ];
 
 export const Solutions = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
     <section id="solutions" className="py-24 bg-background">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="max-w-6xl mx-auto px-6" ref={ref}>
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Powering Navigation Across Industries
           </h2>
@@ -45,7 +48,13 @@ export const Solutions = () => {
         
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {solutions.map((solution, index) => (
-            <Card key={index} className="border-0 shadow-elegant hover:shadow-glow transition-all duration-300">
+            <Card 
+              key={index} 
+              className={`border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+              }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
+            >
               <CardHeader>
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
@@ -69,12 +78,12 @@ export const Solutions = () => {
           ))}
         </div>
 
-        <div className="text-center">
+        <div className={`text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '600ms' }}>
           <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Space?</h3>
           <p className="text-muted-foreground mb-8">
             Join leading organizations already using Alon for smarter indoor navigation.
           </p>
-          <Button variant="default" size="lg" className="text-lg px-8 py-4">
+          <Button variant="default" size="lg" className="text-lg px-8 py-4 hover:scale-105 transition-transform duration-300">
             Start Your Pilot Program
           </Button>
         </div>

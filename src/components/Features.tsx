@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, FileText, Route, Building } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const features = [
   {
@@ -25,10 +26,12 @@ const features = [
 ];
 
 export const Features = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
     <section id="features" className="py-24 bg-gradient-subtle">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="max-w-6xl mx-auto px-6" ref={ref}>
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Complete Indoor Navigation Stack
           </h2>
@@ -40,7 +43,13 @@ export const Features = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="border-0 shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-2">
+            <Card 
+              key={index} 
+              className={`border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:-translate-y-2 hover:scale-105 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
               <CardHeader className="text-center">
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-primary rounded-full flex items-center justify-center">
                   <feature.icon className="w-8 h-8 text-white" />

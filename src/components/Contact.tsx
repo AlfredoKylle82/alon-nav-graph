@@ -3,12 +3,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Calendar, Code } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const Contact = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
     <section id="contact" className="py-24 bg-gradient-subtle">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="max-w-4xl mx-auto px-6" ref={ref}>
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let's Build the Future of Indoor Navigation
           </h2>
@@ -18,7 +21,9 @@ export const Contact = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <Card className="text-center border-0 shadow-elegant">
+          <Card className={`text-center border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`} style={{ transitionDelay: '200ms' }}>
             <CardHeader>
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-primary rounded-full flex items-center justify-center">
                 <Calendar className="w-8 h-8 text-white" />
@@ -35,7 +40,9 @@ export const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className="text-center border-0 shadow-elegant">
+          <Card className={`text-center border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`} style={{ transitionDelay: '400ms' }}>
             <CardHeader>
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-primary rounded-full flex items-center justify-center">
                 <Code className="w-8 h-8 text-white" />
@@ -52,7 +59,9 @@ export const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className="text-center border-0 shadow-elegant">
+          <Card className={`text-center border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`} style={{ transitionDelay: '600ms' }}>
             <CardHeader>
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-primary rounded-full flex items-center justify-center">
                 <Mail className="w-8 h-8 text-white" />
@@ -70,7 +79,9 @@ export const Contact = () => {
           </Card>
         </div>
 
-        <Card className="border-0 shadow-elegant">
+        <Card className={`border-0 shadow-elegant transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`} style={{ transitionDelay: '800ms' }}>
           <CardHeader>
             <CardTitle className="text-2xl text-center">Send us a message</CardTitle>
           </CardHeader>

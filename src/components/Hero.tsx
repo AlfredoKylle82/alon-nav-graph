@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
       <div className="absolute inset-0 bg-black/60"></div>
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white animate-fade-in-up">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           Flow through buildings{" "}
           <span className="text-nav-accent">effortlessly</span>.
@@ -42,10 +42,10 @@ export const Hero = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="hero" size="lg" className="text-lg px-8 py-4">
+          <Button variant="hero" size="lg" className="text-lg px-8 py-4 hover:scale-105 transition-transform duration-300">
             Get Your Map
           </Button>
-          <Button variant="outline-hero" size="lg" className="text-lg px-8 py-4">
+          <Button variant="outline-hero" size="lg" className="text-lg px-8 py-4 hover:scale-105 transition-transform duration-300">
             See Sample Map
           </Button>
         </div>
