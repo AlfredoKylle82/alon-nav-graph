@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { PathfindingAnimation } from "./PathfindingAnimation";
+import { FloorPlan3D } from "./FloorPlan3D";
 
 export const Hero = () => {
   return (
@@ -51,7 +51,7 @@ export const Hero = () => {
         </div>
       </div>
       <div className="absolute inset-0">
-        <PathfindingAnimation />
+        <FloorPlan3D />
       </div>
     </section>
   );
