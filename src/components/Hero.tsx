@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-flow-navigation.jpg";
+import { PathfindingAnimation } from "./PathfindingAnimation";
 
 export const Hero = () => {
   return (
@@ -50,12 +50,8 @@ export const Hero = () => {
           </Button>
         </div>
       </div>
-      <div className="absolute inset-0 opacity-30">
-        <img 
-          src={heroImage} 
-          alt="AI Indoor Navigation Technology" 
-          className="w-full h-full object-cover"
-        />
+      <div className="absolute inset-0">
+        <PathfindingAnimation />
       </div>
     </section>
   );
