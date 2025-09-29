@@ -1,12 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navigation } from "@/components/Navigation";
+import { Hero } from "@/components/Hero";
+import { Features } from "@/components/Features";
+import { Solutions } from "@/components/Solutions";
+import { Contact } from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Navigation />
+      <Hero />
+      <Features />
+      <Solutions />
+      <Contact />
+      <footer className="bg-foreground text-background py-8">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <div className="text-2xl font-bold text-primary-glow mb-4">Alon</div>
+          <p className="text-background/80">
+            Transforming indoor navigation with AI-powered floor plan analysis.
+          </p>
+          <p className="text-background/60 text-sm mt-4">
+            © 2024 Alon. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
