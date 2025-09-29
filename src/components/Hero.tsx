@@ -7,19 +7,19 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          AI Indoor Navigation
-          <span className="block text-primary-glow">for Every Campus</span>
+          Turn floor plans into routes
+          <span className="block text-primary-glow">in 24 hours.</span>
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-          Transform floor plans into intelligent navigation. Parse PDFs, detect rooms, 
-          build routing APIs, and deliver seamless indoor experiences for universities worldwide.
+          Upload DWG/PDF/DXF, auto-detect rooms and doors, review in a lightweight editor, 
+          and publish an accessibility-aware map that works offline—no beacons required.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="hero" size="lg" className="text-lg px-8 py-4">
             Schedule Demo
           </Button>
           <Button variant="outline-hero" size="lg" className="text-lg px-8 py-4">
-            View Documentation
+            See Sample Map
           </Button>
         </div>
       </div>
