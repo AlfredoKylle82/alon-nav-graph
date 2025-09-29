@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button";
+import IndoorHero3D from "./IndoorHero3D";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
       <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 z-0">
+        <IndoorHero3D />
+      </div>
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white animate-fade-in-up">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           Flow through buildings{" "}
