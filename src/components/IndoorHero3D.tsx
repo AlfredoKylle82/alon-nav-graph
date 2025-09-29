@@ -24,7 +24,7 @@
 
 import React, { Suspense, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Html, OrbitControls, Line, useGLTF, Text, Float, Environment } from "@react-three/drei";
+import { Html, OrbitControls, Line, useGLTF, Text, Float } from "@react-three/drei";
 import * as THREE from "three";
 
 /***********************\
@@ -137,17 +137,25 @@ function Pin({ position = [0, 0, 0] as [number, number, number], label, onClick 
 
 function AnimatedPath({ curve, color = "#20d0ff" }: { curve: THREE.Curve<THREE.Vector3>; color?: string; }) {
   const points = useMemo(() => curve.getPoints(240), [curve]);
-  const ref = useRef<any>(null);
+  const lineRef = useRef<any>(null);
+  
   useFrame((_, dt) => {
-    if (!ref.current) return;
-    // animate dash offset for "marching ants" effect
-    ref.current.material.dashOffset -= dt * 0.6;
+    if (lineRef.current?.material) {
+      lineRef.current.material.dashOffset -= dt * 0.6;
+    }
   });
 
   return (
-    <Line ref={ref} points={points} color={color} lineWidth={3} dashed dashScale={20} dashSize={0.5} gapSize={0.35}>
-      <lineDashedMaterial transparent opacity={0.95} color={dashedColor(color)} />
-    </Line>
+    <Line 
+      ref={lineRef} 
+      points={points} 
+      color={color} 
+      lineWidth={3} 
+      dashed 
+      dashScale={20} 
+      dashSize={0.5} 
+      gapSize={0.35}
+    />
   );
 }
 
@@ -240,8 +248,8 @@ function IndoorScene({ modelUrl, route }: { modelUrl?: string; route: Route }) {
 
       {/* Lighting */}
       <ambientLight intensity={0.45} />
-      <directionalLight position={[6, 8, 4]} intensity={1} castShadow shadow-mapSize-width={2048} shadow-mapSize-height={2048} />
-      <Environment preset="city" />
+      <directionalLight position={[6, 8, 4]} intensity={1} castShadow shadow-mapSize={[2048, 2048]} />
+      <hemisphereLight args={["#87ceeb", "#f0e68c", 0.3]} />
     </group>
   );
 }
