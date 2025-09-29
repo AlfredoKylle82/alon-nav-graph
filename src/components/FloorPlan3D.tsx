@@ -36,23 +36,26 @@ const RouteAnimation = ({
   // Create the visible portion of the route based on animation progress
   const visibleCurve = useMemo(() => {
     const totalPoints = curve.getPoints(100);
-    const visiblePoints = totalPoints.slice(0, Math.floor(totalPoints.length * animationProgress));
-    return visiblePoints.length > 1 ? new THREE.CatmullRomCurve3(visiblePoints) : null;
+    const visiblePointCount = Math.max(2, Math.floor(totalPoints.length * animationProgress));
+    const visiblePoints = totalPoints.slice(0, visiblePointCount);
+    return visiblePoints.length >= 2 ? new THREE.CatmullRomCurve3(visiblePoints) : null;
   }, [curve, animationProgress]);
 
-  if (!visibleCurve) return null;
+  const tubularSegments = Math.max(2, Math.floor(50 * animationProgress));
+
+  if (!visibleCurve || animationProgress < 0.02) return null;
 
   return (
     <group>
       {/* Main route tube */}
       <mesh>
-        <tubeGeometry args={[visibleCurve, Math.floor(50 * animationProgress), 0.08, 8, false]} />
+        <tubeGeometry args={[visibleCurve, tubularSegments, 0.08, 8, false]} />
         <meshBasicMaterial ref={materialRef} color={color} transparent opacity={0.9} />
       </mesh>
       
       {/* Glowing effect underneath */}
       <mesh>
-        <tubeGeometry args={[visibleCurve, Math.floor(50 * animationProgress), 0.15, 8, false]} />
+        <tubeGeometry args={[visibleCurve, tubularSegments, 0.15, 8, false]} />
         <meshBasicMaterial color={color} transparent opacity={0.2} />
       </mesh>
     </group>
