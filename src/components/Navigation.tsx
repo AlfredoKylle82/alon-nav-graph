@@ -25,7 +25,7 @@ export const Navigation = () => {
           </a>
         </div>
         <Button variant="default" size="sm">
-          Schedule Demo
+          Get Your Map
         </Button>
       </div>
     </nav>

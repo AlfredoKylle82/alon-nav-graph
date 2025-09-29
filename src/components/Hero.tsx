@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-navigation.jpg";
+import heroImage from "@/assets/hero-flow-navigation.jpg";
 
 export const Hero = () => {
   return (
@@ -7,12 +7,15 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-black/60"></div>
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          Turn floor plans into routes in{" "}
-          <span className="text-nav-accent">24 hours</span>.
+          Flow through buildings{" "}
+          <span className="text-nav-accent">effortlessly</span>.
         </h1>
-        <p className="text-lg md:text-xl lg:text-2xl mb-6 text-white/90 max-w-3xl mx-auto leading-relaxed">
-          Upload DWG/PDF/DXF, auto-detect rooms and doors, review in a lightweight editor, 
-          and publish an accessibility-aware map that works offline—no beacons required.
+        <p className="text-lg md:text-xl lg:text-2xl mb-4 text-white/90 max-w-3xl mx-auto leading-relaxed">
+          From blueprint to navigation in a day. Upload DWG/PDF/DXF, auto-detect rooms and doors, 
+          and publish accessibility-aware maps that help students, visitors, and staff navigate with confidence.
+        </p>
+        <p className="text-base md:text-lg mb-6 text-white/70 max-w-2xl mx-auto">
+          No beacons, no confusion—just seamless indoor experiences that work offline.
         </p>
         
         {/* Checklist */}
@@ -40,7 +43,7 @@ export const Hero = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-            Schedule Demo
+            Get Your Map
           </Button>
           <Button variant="outline-hero" size="lg" className="text-lg px-8 py-4">
             See Sample Map
