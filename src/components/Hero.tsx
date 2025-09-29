@@ -12,7 +12,7 @@ export const Hero = () => {
         />
       </div>
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center animate-fade-in-up">
-        <div className="bg-background/80 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-elegant">
+        <div className="bg-background/40 backdrop-blur-sm rounded-3xl p-8 md:p-12">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-foreground">
             Flow through buildings{" "}
             <span className="text-primary">effortlessly</span>.
