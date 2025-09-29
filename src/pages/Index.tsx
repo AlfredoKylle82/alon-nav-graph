@@ -21,7 +21,7 @@ const Index = () => {
             Transforming indoor navigation with AI-powered floor plan analysis.
           </p>
           <p className="text-background/60 text-sm mt-4">
-            © 2024 Alon. All rights reserved.
+            © 2025 Alon. All rights reserved.
           </p>
         </div>
       </footer>
