@@ -14,12 +14,18 @@ export const Navigation = () => {
           <a href="#solutions" className="text-foreground hover:text-primary transition-smooth">
             Solutions
           </a>
+          <a href="#developers" className="text-foreground hover:text-primary transition-smooth">
+            Developers
+          </a>
+          <a href="#pricing" className="text-foreground hover:text-primary transition-smooth">
+            Pricing
+          </a>
           <a href="#contact" className="text-foreground hover:text-primary transition-smooth">
             Contact
           </a>
         </div>
         <Button variant="default" size="sm">
-          Get Started
+          Schedule Demo
         </Button>
       </div>
     </nav>
