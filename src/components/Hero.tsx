@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { FloorPlan3D } from "./FloorPlan3D";
 
 export const Hero = () => {
   return (
@@ -49,9 +48,6 @@ export const Hero = () => {
             See Sample Map
           </Button>
         </div>
-      </div>
-      <div className="absolute inset-0">
-        <FloorPlan3D />
       </div>
     </section>
   );
