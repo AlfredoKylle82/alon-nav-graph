@@ -9,18 +9,18 @@ export const Contact = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section id="contact" className="py-24 bg-gradient-subtle">
-      <div className="max-w-4xl mx-auto px-6" ref={ref}>
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+    <section id="contact" className="py-12 sm:py-16 md:py-24 bg-gradient-subtle">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6" ref={ref}>
+        <div className={`text-center mb-10 sm:mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-2">
             Let's Build the Future of Indoor Navigation
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4">
             Ready to see Alon in action? Get in touch for a personalized demo.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12 md:mb-16">
           <Card className={`text-center border-0 shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`} style={{ transitionDelay: '200ms' }}>
