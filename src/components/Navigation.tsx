@@ -50,11 +50,11 @@ export const Navigation = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button variant="default" size="sm" className="hidden sm:inline-flex text-xs sm:text-sm hover:scale-105 transition-transform duration-300">
+          <Button variant="default" size="sm" className="hidden lg:inline-flex text-xs sm:text-sm hover:scale-105 transition-transform duration-300">
             Get Your Map
           </Button>
           
-          {/* Mobile Menu Button */}
+          {/* Mobile & Tablet Menu Button */}
           <button 
             className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
