@@ -66,10 +66,9 @@ export const Navigation = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden overflow-hidden transition-all duration-300 ${
-        mobileMenuOpen ? 'max-h-96 border-t border-border' : 'max-h-0'
-      }`}>
-        <div className="px-4 py-4 space-y-3 bg-white/95 backdrop-blur-sm">
+      {mobileMenuOpen && (
+        <div className="lg:hidden border-t border-border bg-white/95 backdrop-blur-sm animate-in slide-in-from-top-2 duration-300">
+          <div className="px-4 py-4 space-y-3">
           <a 
             href="#features" 
             className="block py-2 text-foreground hover:text-primary transition-smooth"
@@ -108,8 +107,9 @@ export const Navigation = () => {
           <Button variant="default" size="sm" className="w-full sm:hidden mt-4">
             Get Your Map
           </Button>
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
